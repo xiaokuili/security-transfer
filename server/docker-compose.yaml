@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  nginx:
+    image: nginx
+    ports:
+      - 8001:8001
+      - 443:443
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/
+      - ./server.key:/etc/nginx/server.key
+      - ./server.crt:/etc/nginx/server.crt
+      - ./ca.crt:/etc/nginx/ca.crt
+      - ./client.crt:/etc/nginx/client.crt
