@@ -1,0 +1,79 @@
+{
+  "job": {
+    "setting": {
+      "speed": {
+        "channel": 3
+      },
+      "errorLimit": {
+        "record": 0,
+        "percentage": 0.02
+      }
+    },
+    "content": [
+      {
+        "reader": {
+          "name": "postgresqlreader",
+          "parameter": {
+            "username": "bLrW3sAo7Pd9/jL+Dv1eCA==",
+            "password": "pqkPcm7fEy/ZyNRCigRTun8sxuRddOv83hdqDOVR+i0=",
+            "connection": [
+              {
+                "querySql": [
+                  "SELECT  id,is_delete,create_time,update_time,table_source,table_source_id,company_code,change_date,change_type,change_type_code,change_before,change_after,change_before_province,change_before_city,change_before_area,change_after_province,change_after_city,change_after_area,change_before_province_code,change_before_city_code,change_before_area_code,change_after_province_code,change_after_city_code,change_after_area_code,is_migrate_province,is_migrate_city,is_migrate_area from (select * from public.dm_lget_address_change limit 10) querysqltmp WHERE update_time>${lastTime} and update_time<=${currentTime} "
+                ],
+                "jdbcUrl": [
+                  "jdbc:postgresql://192.168.200.70:5432/dm"
+                ]
+              }
+            ]
+          }
+        },
+        "writer": {
+          "name": "postgresqlwriter",
+          "parameter": {
+            "username": "V1r2GGOzjtszbfkkYiPD2w==",
+            "password": "bxOrrzRBgOy31J04xgoA638sxuRddOv83hdqDOVR+i0=",
+            "column": [
+              "\"id\"",
+              "\"is_delete\"",
+              "\"create_time\"",
+              "\"update_time\"",
+              "\"table_source\"",
+              "\"table_source_id\"",
+              "\"company_code\"",
+              "\"change_date\"",
+              "\"change_type\"",
+              "\"change_type_code\"",
+              "\"change_before\"",
+              "\"change_after\"",
+              "\"change_before_province\"",
+              "\"change_before_city\"",
+              "\"change_before_area\"",
+              "\"change_after_province\"",
+              "\"change_after_city\"",
+              "\"change_after_area\"",
+              "\"change_before_province_code\"",
+              "\"change_before_city_code\"",
+              "\"change_before_area_code\"",
+              "\"change_after_province_code\"",
+              "\"change_after_city_code\"",
+              "\"change_after_area_code\"",
+              "\"is_migrate_province\"",
+              "\"is_migrate_city\"",
+              "\"is_migrate_area\""
+            ],
+            "writeMode": "update(id)",
+            "connection": [
+              {
+                "table": [
+                  "sync_test.dm_lget_address_change"
+                ],
+                "jdbcUrl": "jdbc:postgresql://192.168.200.58:5433/dm"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}
