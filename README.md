@@ -95,3 +95,15 @@ ChangeLog  2023-3-3
 - nginx tsl转发
 - 双端认证
 
+
+## 端口转发
+server端口转发修改docker-compose.yml
+```
+```- 8012:443```
+
+client端口转发 nginx.conf
+```
+upstream remote{
+            server 192.168.200.58:8012;
+}
+```
