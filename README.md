@@ -107,3 +107,7 @@ upstream remote{
             server 192.168.200.58:8012;
 }
 ```
+
+
+## 查看端口是否开放
+netstat -tunlp
