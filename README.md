@@ -1,4 +1,4 @@
-# security-transfer
+![部署及服务器示例图](https://github.com/xiaokuili/security-transfer/assets/75962709/d8986ab9-794e-4853-96af-e93a118a0cee)# security-transfer
 
 公网数据传输
 
@@ -153,6 +153,7 @@ netstat -tunlp
 ```
 
 ### 部署图
+![image](https://github.com/xiaokuili/security-transfer/assets/75962709/c701a846-418e-420a-84a2-c6c17552ebc2)
 
 
 ### 配置文件修改后,启动服务
